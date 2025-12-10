@@ -3,10 +3,11 @@ dotenv.config()
 
 import express from "express"
 import { v1Router } from "./routers";
-import { authMiddleware } from "./middlewares/auth";
+import cors from "cors"
 
 const app = express();
 
+app.use(cors())
 app.use(express.json());
 app.use("/v1",v1Router);
 
